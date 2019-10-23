@@ -40,7 +40,6 @@ services:
 - name: mariadb
   service: mariadb:0.0.1
   option: 10.2
-  required: true
   storage:
     mysql-data: 1G
 
