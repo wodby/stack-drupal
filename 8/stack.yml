@@ -11,8 +11,8 @@ services:
     - name: PHP_MEMORY_LIMIT
       value: 512M
     storage:
-      # Set default size for the storage named "files".
-      files: 1GB
+      - name: files
+        size: 1GB
     resources:
       request:
         cpu: 0.1
