@@ -11,8 +11,8 @@ services:
     - name: PHP_MEMORY_LIMIT
       value: 512M
     storage:
-      - name: files
-        size: 1GB
+    - name: files
+      size: 1GB
     resources:
       request:
         cpu: 0.1
