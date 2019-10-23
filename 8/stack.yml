@@ -30,7 +30,7 @@ services:
 
 
 - name: nginx
-  service: nginx-drupal8:0.0.1
+  service: drupal8-nginx:0.0.1
   option: 1.15
   required: true
   links:
