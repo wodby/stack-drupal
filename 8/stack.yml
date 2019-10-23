@@ -1,0 +1,59 @@
+name: drupal8
+
+services:
+- name: php
+  service: drupal8-php:0.0.1
+  option: 7.3
+  required: true
+  containers:
+  - name: php
+    env:
+    - name: PHP_MEMORY_LIMIT
+      value: 512M
+    storage:
+      # Set default size for the storage named "files".
+      files: 1GB
+    resources:
+      request:
+        cpu: 0.1
+        memory: 1G
+      limit:
+        cpu: 1
+        limit: 2G
+  links:
+  - name: db
+    service: mariadb
+  - name: newrelic
+    service: newrelic
+#  - name: solr
+#    service: drupal8-solr
+
+
+- name: nginx
+  service: nginx-drupal8:0.0.1
+  option: 1.15
+  required: true
+  links:
+  - name: backend
+    service: php
+
+- name: mariadb
+  service: mariadb:0.0.1
+  option: 10.2
+  required: true
+  storage:
+    mysql-data: 1G
+
+- name: newrelic
+  service: newrelic:0.1.0
+
+env:
+- name: ADD_THIS_ENV_TO_ALL_SVCS
+  value: test
+- name: RANDOM_ENV_VAR
+  secret: true
+  value: '{{random_token}}'
+
+tokens:
+- name: random_token
+  generate: '0-9a-z'
