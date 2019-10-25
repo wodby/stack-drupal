@@ -2,7 +2,7 @@ name: drupal8
 
 services:
 - name: php
-  service: drupal8-php:0.0.1
+  service: drupal8-php
   option: 7.3
   required: true
   containers:
@@ -28,9 +28,8 @@ services:
 #  - name: solr
 #    service: drupal8-solr
 
-
 - name: nginx
-  service: drupal8-nginx:0.0.1
+  service: drupal8-nginx
   option: 1.15
   required: true
   links:
@@ -38,7 +37,7 @@ services:
     service: php
 
 - name: mariadb
-  service: mariadb:0.0.1
+  service: mariadb
   option: 10.2
   storage:
     mysql-data: 1G
