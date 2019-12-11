@@ -42,8 +42,8 @@ services:
   storage:
     mysql-data: 1G
 
-- name: newrelic
-  service: newrelic:0.1.0
+#- name: newrelic
+#  service: newrelic:0.1.0
 
 env:
 - name: ADD_THIS_ENV_TO_ALL_SVCS
