@@ -3,7 +3,6 @@ name: drupal8
 services:
 - name: php
   service: drupal8-php
-  option: 7.3
   required: true
   containers:
   - name: php
