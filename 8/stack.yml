@@ -6,6 +6,9 @@ services:
   title: PHP
   service: drupal8-php
   required: true
+  versions:
+  - 7.4
+  - 7.3
   containers:
   - name: php
     env:
@@ -32,7 +35,8 @@ services:
 - name: nginx
   title: Nginx
   service: drupal8-nginx
-  version: 1.15
+  versions: 
+  - 1.15
   required: true
   links:
   - name: backend
@@ -41,7 +45,6 @@ services:
 - name: mariadb
   title: MariaDB
   service: mariadb
-  version: 10.3
   storage:
   - name: mysql-data
     size: 20
@@ -49,7 +52,8 @@ services:
 - name: mariadb
   title: Cloud MariaDB
   service: cloud-mariadb
-  version: 10.3
+  versions: 
+  - 10.3
 
 #- name: newrelic
 #  service: newrelic:0.1.0
