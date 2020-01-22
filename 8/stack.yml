@@ -1,4 +1,5 @@
 name: drupal8
+title: Drupal 8
 
 services:
 - name: php
