@@ -43,7 +43,8 @@ services:
   service: mariadb
   option: 10.2
   storage:
-    mysql-data: 20
+  - name: mysql-data
+    size: 20
 
 - name: mariadb
   title: MariaDB
