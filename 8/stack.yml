@@ -3,6 +3,7 @@ title: Drupal 8
 
 services:
 - name: php
+  title: PHP
   service: drupal8-php
   required: true
   containers:
@@ -29,6 +30,7 @@ services:
 #    service: drupal8-solr
 
 - name: nginx
+  title: Nginx
   service: drupal8-nginx
   option: 1.15
   required: true
@@ -37,6 +39,7 @@ services:
     service: php
 
 - name: mariadb
+  title: MariaDB
   service: mariadb
   option: 10.2
   storage:
