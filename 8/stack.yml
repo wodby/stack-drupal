@@ -45,6 +45,11 @@ services:
   storage:
     mysql-data: 1G
 
+- name: mariadb
+  title: MariaDB
+  service: cloud-mariadb
+  option: 10.2
+
 #- name: newrelic
 #  service: newrelic:0.1.0
 
