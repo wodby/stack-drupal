@@ -13,7 +13,7 @@ services:
       value: 512M
     storage:
     - name: files
-      size: 50G
+      size: 50
     resources:
       request:
         cpu: 0.1
@@ -43,7 +43,7 @@ services:
   service: mariadb
   option: 10.2
   storage:
-    mysql-data: 20G
+    mysql-data: 20
 
 - name: mariadb
   title: MariaDB
