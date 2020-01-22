@@ -35,8 +35,6 @@ services:
 - name: nginx
   title: Nginx
   service: drupal8-nginx
-  versions: 
-  - 1.15
   required: true
   links:
   - name: backend
