@@ -32,7 +32,7 @@ services:
 - name: nginx
   title: Nginx
   service: drupal8-nginx
-  option: 1.15
+  version: 1.15
   required: true
   links:
   - name: backend
@@ -41,7 +41,7 @@ services:
 - name: mariadb
   title: MariaDB
   service: mariadb
-  option: 10.3
+  version: 10.3
   storage:
   - name: mysql-data
     size: 20
@@ -49,7 +49,7 @@ services:
 - name: mariadb
   title: Cloud MariaDB
   service: cloud-mariadb
-  option: 10.3
+  version: 10.3
 
 #- name: newrelic
 #  service: newrelic:0.1.0
