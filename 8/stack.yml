@@ -47,7 +47,7 @@ services:
     size: 20
 
 - name: mariadb
-  title: MariaDB
+  title: Cloud MariaDB
   service: cloud-mariadb
   option: 10.2
 
