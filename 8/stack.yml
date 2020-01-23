@@ -14,9 +14,6 @@ services:
     env:
     - name: PHP_MEMORY_LIMIT
       value: 512M
-    storage:
-    - name: files
-      size: 50
     resources:
       request:
         cpu: 0.1
@@ -24,6 +21,9 @@ services:
       limit:
         cpu: 1
         limit: 2G
+  storage:
+  - name: files
+    size: 50        
   links:
   - name: db
     service: mariadb
