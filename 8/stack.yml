@@ -40,7 +40,7 @@ services:
   - name: mysql-data
     size: 20
 
-- name: mariadb
+- name: cloud-mariadb
   title: Cloud MariaDB
   service: cloud-mariadb
   options: 
