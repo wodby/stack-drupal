@@ -23,7 +23,10 @@ services:
         limit: 2G
   storage:
   - name: files
-    size: 50        
+    size: 50
+  links:
+  - name: db
+    service: mariadb
 
 - name: nginx
   title: Nginx
