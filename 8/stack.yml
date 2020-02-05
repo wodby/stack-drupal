@@ -17,10 +17,7 @@ services:
     resources:
       request:
         cpu: 0.1
-        memory: 1000
-      limit:
-        cpu: 1
-        limit: 2000
+        memory: 16
   storage:
   - name: files
     size: 50
