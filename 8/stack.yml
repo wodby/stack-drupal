@@ -16,7 +16,7 @@ services:
       value: 512M
     resources:
       request:
-        cpu: 0.1
+        cpu: 100
         memory: 16
   storage:
   - name: files
