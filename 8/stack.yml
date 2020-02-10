@@ -59,4 +59,4 @@ env:
 tokens:
 - name: random_token
   generate:
-  - regex: '[0-9a-z]{5,10}'
+    regex: '[0-9a-z]{5,10}'
