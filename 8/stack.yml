@@ -18,7 +18,7 @@ services:
       request:
         cpu: 100
         memory: 16
-  storage:
+  volumes:
   - name: files
     size: 50
   links:
@@ -36,7 +36,7 @@ services:
 - name: mariadb
   title: MariaDB
   service: mariadb
-  storage:
+  volumes:
   - name: mysql-data
     size: 20
 
