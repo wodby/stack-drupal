@@ -1,0 +1,47 @@
+name: drupal9
+title: Drupal 9
+
+services:
+- name: php
+  title: PHP
+  service: drupal9-php
+  required: true
+  options:
+  - 7.4
+  - 7.3
+  containers:
+  - name: php
+    env:
+    - name: PHP_MEMORY_LIMIT
+      value: 512M
+    resources:
+      request:
+        cpu: 100
+        memory: 16
+  volumes:
+  - name: files
+    size: 50
+  links:
+  - name: db
+    service: mariadb
+
+- name: nginx
+  title: Nginx
+  service: drupal9-nginx
+  required: true
+  links:
+  - name: backend
+    service: php
+
+- name: mariadb
+  title: MariaDB
+  service: mariadb
+  volumes:
+  - name: mysql-data
+    size: 20
+
+- name: cloud-mariadb
+  title: Cloud MariaDB
+  service: cloud-mariadb
+  options: 
+  - 10.3
