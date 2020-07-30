@@ -7,8 +7,8 @@ services:
   service: drupal9-php
   required: true
   options:
-  - version: 7.4
-  - version: 7.3
+  - version: '7.4'
+  - version: '7.3'
     default: true
   containers:
   - name: php
@@ -45,4 +45,4 @@ services:
   title: Cloud MariaDB
   service: cloud-mariadb
   options: 
-  - version: 10.3
+  - version: '10.3'
