@@ -8,8 +8,8 @@ services:
   required: true
   options:
   - version: 7.4
-    default: true
   - version: 7.3
+    default: true
   containers:
   - name: php
     env:
