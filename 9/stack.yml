@@ -45,4 +45,4 @@ services:
   title: Cloud MariaDB
   service: cloud-mariadb
   options: 
-  - 10.3
+  - version: 10.3
