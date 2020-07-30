@@ -7,8 +7,9 @@ services:
   service: drupal9-php
   required: true
   options:
-  - 7.4
-  - 7.3
+  - version: 7.4
+    default: true
+  - version: 7.3
   containers:
   - name: php
     env:
