@@ -7,8 +7,8 @@ services:
   service: drupal8-php
   required: true
   options:
-  - 7.4
-  - 7.3
+  - version: 7.4
+  - version: 7.3
   containers:
   - name: php
     env:
@@ -44,7 +44,7 @@ services:
   title: Cloud MariaDB
   service: cloud-mariadb
   options: 
-  - 10.3
+  - version: 10.3
 
 #- name: newrelic
 #  service: newrelic:0.1.0
