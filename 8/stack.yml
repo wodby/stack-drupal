@@ -11,7 +11,7 @@ services:
   - version: 7.3
   derivatives:
   - name: sshd
-    service: drupal9-php-sshd  
+    service: drupal8-php-sshd  
   containers:
   - name: php
     env:
