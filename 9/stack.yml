@@ -6,6 +6,9 @@ services:
   title: PHP
   service: drupal9-php
   required: true
+  derivatives:
+  - name: sshd
+    service: drupal9-php-sshd
   options:
   - version: 7.4
   - version: 7.3
