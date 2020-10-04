@@ -45,6 +45,7 @@ services:
 
 - name: cloud-mariadb
   title: Cloud MariaDB
+  disabled: true
   service: cloud-mariadb
   options: 
   - version: 10.3
