@@ -53,7 +53,7 @@ services:
 
 - name: cloud-mysql
   title: Cloud MySQL
-  service: cloud-mariadb
+  service: cloud-mysql
   disabled: true
   options: 
   - version: 5.5
