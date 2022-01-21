@@ -11,9 +11,10 @@ services:
   - name: sshd
     service: drupal9-php-sshd
   options:
-  - version: 7.4
-  - version: 7.3
+  - version: 8.1
     default: true
+  - version: 8.0  
+  - version: 7.4
   containers:
   - name: php
     env:
@@ -29,6 +30,10 @@ services:
   links:
   - name: db
     service: mariadb
+  cron:
+  - name: drush
+    command: ['drush', '-r', '${HTTP_ROOT}', '-l', '${WODBY_URL_PRIMARY}', 'cron']
+    period: 25 * * * * 
 
 - name: nginx
   title: Nginx
@@ -37,6 +42,10 @@ services:
   links:
   - name: backend
     service: php
+  cron:
+  - name: test
+    command: ['echo', '123']
+    period: 0 * * * * 
 
 - name: mariadb
   title: MariaDB
