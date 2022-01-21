@@ -33,7 +33,7 @@ services:
   cron:
   - name: drush
     command: ['drush', '-r', '${HTTP_ROOT}', '-l', '${WODBY_URL_PRIMARY}', 'cron']
-    period: 25 * * * * 
+    schedule: 25 * * * * 
 
 - name: nginx
   title: Nginx
@@ -45,7 +45,7 @@ services:
   cron:
   - name: test
     command: ['echo', '123']
-    period: 0 * * * * 
+    schedule: 0 * * * * 
 
 - name: mariadb
   title: MariaDB
