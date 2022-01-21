@@ -32,7 +32,7 @@ services:
     service: mariadb
   cron:
   - name: drush
-    command: ['drush', '-r', '${HTTP_ROOT}', '-l', '${WODBY_URL_PRIMARY}', 'cron']
+    command: drush -r ${HTTP_ROOT} -l ${WODBY_URL_PRIMARY} cron
     schedule: 25 * * * * 
 
 - name: nginx
@@ -44,7 +44,7 @@ services:
     service: php
   cron:
   - name: test
-    command: ['echo', '123']
+    command: echo "123"
     schedule: 0 * * * * 
 
 - name: mariadb
