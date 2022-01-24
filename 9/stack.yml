@@ -11,10 +11,10 @@ services:
   - name: sshd
     service: drupal9-php-sshd
   options:
-  - version: 8.1
+  - version: '8.1'
     default: true
-  - version: 8.0
-  - version: 7.4
+  - version: '8.0'
+  - version: '7.4'
   containers:
   - name: php
     env:
@@ -61,17 +61,17 @@ services:
   service: cloud-mariadb
   disabled: true
   options:
-  - version: 10.3
+  - version: '10.3'
 
 - name: cloud-mysql
   title: Cloud MySQL
   service: cloud-mysql
   disabled: true
   options:
-  - version: 5.5
-  - version: 5.6
-  - version: 5.7
-  - version: 8
+  - version: '5.5'
+  - version: '5.6'
+  - version: '5.7'
+  - version: '8'
 
 tokens:
 - name: random_token
