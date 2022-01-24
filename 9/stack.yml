@@ -13,7 +13,7 @@ services:
   options:
   - version: 8.1
     default: true
-  - version: 8.0  
+  - version: 8.0
   - version: 7.4
   containers:
   - name: php
@@ -32,8 +32,9 @@ services:
     service: mariadb
   cron:
   - name: drush
+    title: drush cron
     command: drush -r ${HTTP_ROOT} -l ${WODBY_URL_PRIMARY} cron
-    schedule: 25 * * * * 
+    schedule: 25 * * * *
 
 - name: nginx
   title: Nginx
@@ -44,8 +45,9 @@ services:
     service: php
   cron:
   - name: test
+    title: test
     command: echo "123"
-    schedule: 0 * * * * 
+    schedule: 0 * * * *
 
 - name: mariadb
   title: MariaDB
@@ -58,14 +60,14 @@ services:
   title: Cloud MariaDB
   service: cloud-mariadb
   disabled: true
-  options: 
+  options:
   - version: 10.3
 
 - name: cloud-mysql
   title: Cloud MySQL
   service: cloud-mysql
   disabled: true
-  options: 
+  options:
   - version: 5.5
   - version: 5.6
   - version: 5.7
