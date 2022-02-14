@@ -43,11 +43,6 @@ services:
   links:
   - name: backend
     service: php
-  cron:
-  - name: test
-    title: test
-    command: echo "123"
-    schedule: 0 * * * *
 
 - name: mariadb
   title: MariaDB
