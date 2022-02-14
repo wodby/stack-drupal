@@ -31,10 +31,10 @@ services:
   - name: db
     service: mariadb
   cron:
-  - name: test
-    title: test cron
-    command: echo 123
-    schedule: 25 * * * *
+  - name: drush 
+    title: drush cron
+    command: drush -r ${HTTP_ROOT} -l ${WODBY_URL_PRIMARY} cron
+    schedule: 0 * * * *
 
 - name: nginx
   title: Nginx
