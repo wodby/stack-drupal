@@ -27,11 +27,6 @@ services:
   links:
   - name: db
     service: mariadb
-  cron:
-  - name: drush 
-    title: drush cron
-    command: drush -r ${HTTP_ROOT} -l ${WODBY_URL_PRIMARY} cron
-    schedule: 0 * * * *
 
 - name: nginx
   title: Nginx
