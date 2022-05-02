@@ -5,11 +5,8 @@ title: Drupal 9
 services:
 - name: php
   title: PHP
-  service: drupal9-php
+  service: php-drupal9
   required: true
-  derivatives:
-  - name: sshd
-    service: drupal9-php-sshd
   options:
   - version: '8.1'
     default: true
@@ -38,7 +35,7 @@ services:
 
 - name: nginx
   title: Nginx
-  service: drupal9-nginx
+  service: nginx-drupal9
   required: true
   links:
   - name: backend
@@ -51,20 +48,18 @@ services:
   - name: data
     size: 20
 
-- name: cloud-mariadb
+- name: mariadb-cloud
   title: Cloud MariaDB
-  service: cloud-mariadb
+  service: mariadb-cloud
   disabled: true
   options:
   - version: '10.3'
 
-- name: cloud-mysql
+- name: mysql-cloud
   title: Cloud MySQL
-  service: cloud-mysql
+  service: mysql-cloud
   disabled: true
   options:
-  - version: '5.5'
-  - version: '5.6'
   - version: '5.7'
   - version: '8'
 
