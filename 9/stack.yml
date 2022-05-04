@@ -12,6 +12,9 @@ services:
     default: true
   - version: '8.0'
   - version: '7.4'
+  derivatives:
+  - name: php-drupal9-sshd
+    service: sshd
   containers:
   - name: php
     env:
