@@ -13,8 +13,8 @@ services:
   - version: '8.0'
   - version: '7.4'
   derivatives:
-  - name: php-drupal9-sshd
-    service: sshd
+  - name: sshd
+    service: php-drupal9-sshd
   containers:
   - name: php
     env:
