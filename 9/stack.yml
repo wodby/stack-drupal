@@ -20,10 +20,10 @@ services:
     env:
     - name: PHP_MEMORY_LIMIT
       value: 512M
-    resources:
-      request:
-        cpu: 100
-        memory: 16
+#     resources:
+#       request:
+#         cpu: 100
+#         memory: 16
   volumes:
   - name: files
     size: 50
