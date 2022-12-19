@@ -1,0 +1,73 @@
+name: drupal10
+icon: drupal10
+title: Drupal 10
+
+services:
+- name: php
+  title: PHP
+  service: drupal10-php
+  required: true
+  options:
+  - version: '8.1'
+    default: true
+  - version: '8.2'
+  derivatives:
+  - name: sshd
+    service: drupal10-php-sshd
+  containers:
+  - name: php
+    env:
+    - name: PHP_MEMORY_LIMIT
+      value: 512M
+#     resources:
+#       request:
+#         cpu: 100
+#         memory: 16
+  volumes:
+  - name: files
+    size: 50
+  links:
+  - name: db
+    service: mariadb
+
+- name: nginx
+  title: Nginx
+  service: drupal10-nginx
+  required: true
+  links:
+  - name: backend
+    service: php
+
+- name: mariadb
+  title: MariaDB
+  service: mariadb
+  volumes:
+  - name: data
+    size: 20
+
+- name: redis
+  required: false
+  title: Redis
+  service: redis
+
+- name: cloud-mariadb
+  title: Cloud MariaDB
+  service: cloud-mariadb
+  disabled: true
+  options:
+  - version: '10.3'
+
+- name: cloud-mysql
+  title: Cloud MySQL
+  service: cloud-mysql
+  disabled: true
+  options:
+  - version: '5.7'
+  - version: '8'
+
+tokens:
+- name: random_token
+  generate:
+    regex: '[0-9a-z]{5,10}'
+- name: db_backup_ignore_tables
+  value: 'cache_%;cache;ctools_object_cache;ctools_views_cache;flood;history;queue;search_index;semaphore;sequences;sessions;watchdog'
