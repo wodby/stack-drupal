@@ -29,6 +29,8 @@ services:
   links:
   - name: db
     service: mariadb
+  - name: files
+    service: nfs
 
 - name: nginx
   title: Nginx
@@ -44,6 +46,10 @@ services:
   volumes:
   - name: data
     size: 20
+
+- name: nfs
+  title: NFS
+  service: nfs-ganesha
 
 - name: redis
   required: false
