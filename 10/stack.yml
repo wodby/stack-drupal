@@ -47,8 +47,8 @@ services:
   - name: data
     size: 20
 
-- name: nfs
-  title: NFS
+- name: files-nfs
+  title: Files NFS
   service: nfs-ganesha
 
 - name: redis
