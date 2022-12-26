@@ -30,7 +30,7 @@ services:
   - name: db
     service: mariadb
   - name: files
-    service: nfs
+    service: files-nfs
 
 - name: nginx
   title: Nginx
