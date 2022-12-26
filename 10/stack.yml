@@ -52,7 +52,7 @@ services:
   service: nfs-ganesha
   volumes:
   - name: export
-    size: 20
+    size: 25
 
 - name: redis
   required: false
