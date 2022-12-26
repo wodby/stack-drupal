@@ -29,8 +29,8 @@ services:
   links:
   - name: db
     service: mariadb
-  - name: files
-    service: files-nfs
+  - name: wp-content
+    service: wp-content-nfs
 
 - name: nginx
   title: Nginx
@@ -47,8 +47,8 @@ services:
   - name: data
     size: 10
 
-- name: files-nfs
-  title: Files NFS
+- name: wp-content-nfs
+  title: WP content NFS
   service: nfs-ganesha
   volumes:
   - name: export
