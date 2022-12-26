@@ -50,6 +50,9 @@ services:
 - name: files-nfs
   title: Files NFS
   service: nfs-ganesha
+  volumes:
+  - name: export
+    size: 50
 
 - name: redis
   required: false
