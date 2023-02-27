@@ -79,4 +79,4 @@ tokens:
   generate:
     regex: '[0-9a-z]{5,10}'
 - name: db_backup_ignore_tables
-  value: 'cache_%;cache;ctools_object_cache;ctools_views_cache;flood;history;queue;search_index;semaphore;sequences;sessions;watchdog'
+  value: 'views_data_export_index_%;cache_%;cache;ctools_object_cache;ctools_views_cache;flood;history;queue;search_index;semaphore;sequences;sessions;watchdog'
