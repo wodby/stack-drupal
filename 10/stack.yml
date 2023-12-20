@@ -31,6 +31,8 @@ services:
     service: mariadb
   - name: files
     service: files-nfs
+  - name: redis
+    service: redis
 
 - name: nginx
   title: Nginx
