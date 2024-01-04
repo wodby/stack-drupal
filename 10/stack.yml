@@ -8,9 +8,10 @@ services:
   service: drupal10-php
   required: true
   options:
-  - version: '8.1'
+  - version: '8.3'
     default: true
   - version: '8.2'
+  - version: '8.1'
   derivatives:
   - name: sshd
     service: drupal10-php-sshd
