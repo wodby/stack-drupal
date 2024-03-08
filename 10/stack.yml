@@ -49,6 +49,9 @@ services:
   volumes:
   - name: data
     size: 10
+  env:
+  - name: MYSQL_TRANSACTION_ISOLATION
+    value: READ-COMMITTED
 
 - name: files-nfs
   title: Files NFS
