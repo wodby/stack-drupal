@@ -55,7 +55,7 @@ services:
 
 - name: files-nfs
   title: Files NFS
-  service: nfs-ganesha
+  service: nfs-provisioner
   volumes:
   - name: export
     size: 25
