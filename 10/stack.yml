@@ -53,8 +53,8 @@ services:
   - name: MYSQL_TRANSACTION_ISOLATION
     value: READ-COMMITTED
 
-- name: files-storage
-  title: Files Storage
+- name: files-nfs
+  title: Files NFS Storage
   service: nfs-provisioner
   volumes:
   - name: export
