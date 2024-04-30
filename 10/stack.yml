@@ -57,7 +57,7 @@ services:
   title: Files NFS Storage
   service: nfs-provisioner
   volumes:
-  - name: export
+  - name: data
     size: 25
 
 - name: redis
