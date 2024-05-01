@@ -60,11 +60,6 @@ services:
   - name: data
     size: 25
 
-- name: redis
-  required: false
-  title: Redis
-  service: redis
-
 - name: cloud-mariadb
   title: Cloud MariaDB
   service: cloud-mariadb
