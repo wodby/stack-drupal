@@ -32,8 +32,8 @@ services:
     service: mariadb
   - name: files
     service: files-nfs
-  - name: redis
-    service: redis
+  - name: solr
+    service: solr
 
 - name: nginx
   title: Nginx
@@ -59,6 +59,19 @@ services:
   volumes:
   - name: data
     size: 25
+
+- name: solr
+  title: Solr
+  service: solr
+  disabled: true  
+  links: 
+  - name: zookeeper
+    service: zookeeper
+
+- name: zookeeper
+  title: ZooKeeper (Solr)
+  disabled: true  
+  service: zookeeper
 
 - name: cloud-mariadb
   title: Cloud MariaDB
