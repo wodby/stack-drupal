@@ -34,6 +34,8 @@ services:
     service: files-nfs
   - name: solr
     service: solr
+  - name: valkey
+    service: valkey
 
 - name: nginx
   title: Nginx
@@ -67,6 +69,11 @@ services:
   links: 
   - name: zookeeper
     service: zookeeper
+
+- name: valkey
+  required: false
+  title: Valkey
+  service: valkey
 
 - name: zookeeper
   title: ZooKeeper (Solr)
