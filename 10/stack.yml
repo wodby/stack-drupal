@@ -39,14 +39,6 @@ services:
   - name: sendmail
     service: opensmtpd
 
-- name: nginx
-  title: Nginx
-  service: drupal10-nginx
-  required: true
-  links:
-  - name: backend
-    service: php
-
 - name: varnish
   title: Varnish
   service: varnish
@@ -56,6 +48,14 @@ services:
   links:
   - name: backend
     service: nginx
+
+- name: nginx
+  title: Nginx
+  service: drupal10-nginx
+  required: true
+  links:
+  - name: backend
+    service: php
 
 - name: mariadb
   title: MariaDB
