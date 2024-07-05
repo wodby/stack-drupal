@@ -34,8 +34,10 @@ services:
     service: files-nfs
   - name: solr
     service: solr
-  - name: valkey
+  - name: redis
     service: valkey
+  - name: sendmail
+    service: opensmtpd
 
 - name: nginx
   title: Nginx
@@ -44,6 +46,16 @@ services:
   links:
   - name: backend
     service: php
+
+- name: varnish
+  title: Varnish
+  service: varnish
+  env:
+  - name: VARNISH_CONFIG_PRESET
+    value: drupal
+  links:
+  - name: backend
+    service: nginx
 
 - name: mariadb
   title: MariaDB
@@ -75,10 +87,28 @@ services:
   title: Valkey
   service: valkey
 
+- name: opensmtpd
+  required: false
+  title: OpenSMTPD
+  service: opensmtpd
+
+- name: gotenberg
+  required: false
+  title: Gotenberg
+  service: gotenberg
+
 - name: zookeeper
   title: ZooKeeper (Solr)
   disabled: true  
   service: zookeeper
+
+- name: postgres
+  title: PostgreSQL
+  service: postgres
+  disabled: true
+  volumes:
+  - name: data
+    size: 10
 
 - name: cloud-mariadb
   title: Cloud MariaDB
