@@ -41,10 +41,7 @@ services:
 
 - name: varnish
   title: Varnish
-  service: varnish
-  env:
-  - name: VARNISH_CONFIG_PRESET
-    value: drupal
+  service: drupal-varnish
   links:
   - name: backend
     service: nginx
