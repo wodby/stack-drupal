@@ -1,0 +1,127 @@
+name: drupal11
+icon: drupal11
+title: Drupal 11
+
+services:
+- name: php
+  title: PHP
+  service: drupal11-php
+  required: true
+  options:
+  - version: '8.3'
+    default: true
+  derivatives:
+  - name: sshd
+    service: drupal11-php-sshd
+  containers:
+  - name: php
+    env:
+    - name: PHP_MEMORY_LIMIT
+      value: 512M
+#     resources:
+#       request:
+#         cpu: 100
+#         memory: 16
+  volumes:
+  - name: files
+    size: 20
+  links:
+  - name: db
+    service: mariadb
+  - name: files
+    service: files-nfs
+  - name: solr
+    service: solr
+  - name: redis
+    service: valkey
+  - name: sendmail
+    service: opensmtpd
+
+- name: varnish
+  title: Varnish
+  service: drupal-varnish
+  links:
+  - name: backend
+    service: nginx
+
+- name: nginx
+  title: Nginx
+  service: drupal11-nginx
+  required: true
+  links:
+  - name: backend
+    service: php
+
+- name: mariadb
+  title: MariaDB
+  service: mariadb
+  volumes:
+  - name: data
+    size: 10
+  env:
+  - name: MYSQL_TRANSACTION_ISOLATION
+    value: READ-COMMITTED
+
+- name: files-nfs
+  title: Files NFS Storage
+  service: nfs-provisioner
+  volumes:
+  - name: data
+    size: 25
+
+- name: solr
+  title: Solr
+  service: solr
+  disabled: true  
+  links: 
+  - name: zookeeper
+    service: zookeeper
+
+- name: valkey
+  required: false
+  title: Valkey
+  service: valkey
+
+- name: opensmtpd
+  required: false
+  title: OpenSMTPD
+  service: opensmtpd
+
+- name: gotenberg
+  required: false
+  title: Gotenberg
+  service: gotenberg
+
+- name: zookeeper
+  title: ZooKeeper (Solr)
+  disabled: true  
+  service: zookeeper
+
+- name: postgres
+  title: PostgreSQL
+  service: postgres
+  disabled: true
+  volumes:
+  - name: data
+    size: 10
+
+- name: cloud-mariadb
+  title: Cloud MariaDB
+  service: cloud-mariadb
+  disabled: true
+  options:
+  - version: '10.3'
+
+- name: cloud-mysql
+  title: Cloud MySQL
+  service: cloud-mysql
+  disabled: true
+  options:
+  - version: '8'
+
+tokens:
+- name: random_token
+  generate:
+    regex: '[0-9a-z]{5,10}'
+- name: db_backup_ignore_tables
+  value: 'views_data_export_index_%;cache_%;cache;ctools_object_cache;ctools_views_cache;flood;history;queue;search_index;semaphore;sequences;sessions;watchdog'
