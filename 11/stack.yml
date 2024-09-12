@@ -35,7 +35,7 @@ services:
   - name: redis
     service: valkey
   - name: sendmail
-    service: opensmtpd
+    service: mailpit
 
 - name: varnish
   title: Varnish
@@ -91,6 +91,11 @@ services:
   required: false
   title: Gotenberg
   service: gotenberg
+
+- name: mailpit
+  required: false
+  title: Mailpit
+  service: mailpit
 
 - name: zookeeper
   title: ZooKeeper (Solr)
