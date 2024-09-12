@@ -82,20 +82,19 @@ services:
   title: Valkey
   service: valkey
 
-- name: opensmtpd
-  required: false
-  title: OpenSMTPD
-  service: opensmtpd
-
 - name: gotenberg
   required: false
   title: Gotenberg
   service: gotenberg
 
 - name: mailpit
-  required: false
   title: Mailpit
   service: mailpit
+
+- name: opensmtpd
+  disabled: true
+  title: OpenSMTPD
+  service: opensmtpd
 
 - name: zookeeper
   title: ZooKeeper (Solr)
