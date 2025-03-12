@@ -24,7 +24,7 @@ services:
 #         memory: 16
   volumes:
   - name: files
-    size: 20
+    size: 10
   links:
   - name: db
     service: mariadb
@@ -67,7 +67,7 @@ services:
   service: nfs-provisioner
   volumes:
   - name: data
-    size: 25
+    size: 15
 
 - name: solr
   title: Solr
