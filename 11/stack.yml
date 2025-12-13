@@ -10,6 +10,7 @@ services:
   options:
   - version: '8.4'
     default: true
+  - version: '8.3'
   derivatives:
   - name: sshd
     service: drupal11-php-sshd
