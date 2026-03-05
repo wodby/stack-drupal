@@ -40,7 +40,7 @@ services:
 
 - name: vinyl
   title: Vinyl
-  service: vinyl-varnish
+  service: drupal-vinyl
   links:
   - name: backend
     service: nginx
