@@ -39,9 +39,9 @@ services:
   - name: sendmail
     service: opensmtpd
 
-- name: varnish
-  title: Varnish
-  service: drupal-varnish
+- name: vinyl
+  title: Vinyl
+  service: drupal-vinyl
   links:
   - name: backend
     service: nginx
