@@ -38,9 +38,9 @@ services:
   - name: sendmail
     service: mailpit
 
-- name: varnish
-  title: Varnish
-  service: drupal-varnish
+- name: vinyl
+  title: Vinyl
+  service: vinyl-varnish
   links:
   - name: backend
     service: nginx
