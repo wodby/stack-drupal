@@ -39,19 +39,19 @@ services:
   - name: sendmail
     service: mailpit
 
-# - name: varnish
-#   title: Varnish
-#   service: drupal-varnish
-#   links:
-#   - name: backend
-#     service: nginx
-  
-- name: vinyl
-  title: Vinyl
-  service: drupal-vinyl
+- name: varnish
+  title: Varnish
+  service: drupal-varnish
   links:
   - name: backend
     service: nginx
+  
+# - name: vinyl
+#   title: Vinyl
+#   service: drupal-vinyl
+#   links:
+#   - name: backend
+#     service: nginx
 
 - name: nginx
   title: Nginx
