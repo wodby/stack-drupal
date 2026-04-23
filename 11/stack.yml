@@ -15,15 +15,6 @@ services:
   derivatives:
   - name: sshd
     service: drupal11-php-sshd
-  containers:
-  - name: php
-    env:
-    - name: PHP_MEMORY_LIMIT
-      value: 512M
-#     resources:
-#       request:
-#         cpu: 100
-#         memory: 16
   volumes:
   - name: files
     size: 10
@@ -38,6 +29,13 @@ services:
     service: valkey
   - name: sendmail
     service: mailpit
+  workloads:
+  - id: main
+    containers:
+    - name: php
+      env:
+      - name: PHP_MEMORY_LIMIT
+        value: 512M
 
 # - name: varnish
 #   title: Varnish
