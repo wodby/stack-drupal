@@ -30,7 +30,7 @@ services:
   - name: sendmail
     service: opensmtpd
   workloads:
-  - id: main
+  - name: main
     containers:
     - name: php
       env:
