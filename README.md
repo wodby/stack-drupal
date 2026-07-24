@@ -9,9 +9,9 @@ composition for Drupal.
 - [Wodby stack documentation](https://wodby.com/docs/2.0/stacks/)
 - [Stack manifest reference](https://wodby.com/docs/2.0/stacks/template/)
 
-## Start from a template
+## Start from a boilerplate
 
-Use one of the compatible source templates exposed by this stack's services to
+Use one of the compatible boilerplates exposed by this stack's services to
 start with Wodby CI build configuration:
 
 - [Drupal CMS](https://github.com/wodby/drupal-cms-template)
