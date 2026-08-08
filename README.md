@@ -6,6 +6,7 @@ This repository defines the Wodby stack manifests and default service
 composition for Drupal.
 
 - [Browse Wodby application stacks](https://wodby.com/stacks)
+- [Drupal stack guide](https://wodby.com/docs/2.0/stacks/catalog/drupal/)
 - [Wodby stack documentation](https://wodby.com/docs/2.0/stacks/)
 - [Stack manifest reference](https://wodby.com/docs/2.0/stacks/template/)
 
