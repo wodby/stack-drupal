@@ -54,6 +54,9 @@ services:
 - name: mariadb
   title: MariaDB
   service: mariadb
+  tokens:
+  - name: db_backup_ignore_tables
+    value: 'cache_%;cachetags;search_dataset;search_index;search_total;semaphore'
   volumes:
   - name: data
     size: 10
@@ -100,6 +103,9 @@ services:
   title: PostgreSQL
   service: postgres
   disabled: true
+  tokens:
+  - name: exclude_tables
+    value: 'cache_*;cachetags;search_dataset;search_index;search_total;semaphore'
   volumes:
   - name: data
     size: 10
@@ -123,5 +129,3 @@ tokens:
 - name: random_token
   generate:
     regex: '[0-9a-z]{5,10}'
-- name: db_backup_ignore_tables
-  value: 'views_data_export_index_%;cache_%;cache;ctools_object_cache;ctools_views_cache;flood;history;queue;search_index;semaphore;sequences;sessions;watchdog'
