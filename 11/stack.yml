@@ -1,5 +1,6 @@
 name: drupal11
 icon: drupal
+docs: https://wodby.com/docs/2.0/stacks/catalog/drupal/
 title: Drupal 11
 
 services:
