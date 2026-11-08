@@ -150,17 +150,6 @@ services:
     ports:
     - name: otlp-http
       private: true
-  workloads:
-  - name: main
-    containers:
-    - name: otelcol
-      resources:
-        request:
-          cpu: 100
-          memory: 128
-        limit:
-          cpu: 500
-          memory: 512
 
 tokens:
 - name: random_token
